@@ -6,7 +6,7 @@ class TweetsController < ApplicationController
         @tweet = Tweet.new
     end
     def create
-        @tweet = Tweet.new(message: params[:tweet][:message], tdate: params[:tweet][:tdate])
+        @tweet = Tweet.new(message: params[:tweet][:message], tdate: Time.current)
         if @tweet.save
             flash[:notice] = '1レコード追加しました。'
             redirect_to '/' 
@@ -28,7 +28,7 @@ class TweetsController < ApplicationController
     end
     def update
         @tweet = Tweet.find(params[:id])
-        @tweet.update(message: params[:tweet][:message], tdate: params[:tweet][:tdate])
+        @tweet.update(message: params[:tweet][:message], tdate: Time.current)
         if @tweet.save
             flash[:notice] = '1レコード変更しました。'
             redirect_to '/' 

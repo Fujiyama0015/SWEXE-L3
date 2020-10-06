@@ -8,13 +8,13 @@
  <p>
      <%= tweet.message %>
      
-     <% time = Time.current.to_i - tweet.tdate.to_i %>
+     <% time = ((Time.current.to_i - tweet.tdate.to_i) / 60) %>
      
      <%= "#{time}分前" %>
     
-     <%= link_to '削除', "/tweets/#{tweet.id}", method: :delete %>
-     <%= link_to '表示', "/tweets/#{tweet.id}" %>
-     <%= link_to '編集', "/tweets/#{tweet.id}/edit" %>
+     <%= link_to '削除', tweet_path(tweet.id), method: :delete %>
+     <%= link_to '表示', tweet_path(tweet.id) %>
+     <%= link_to '編集', edit_tweet_path(tweet.id) %>
  </p>
 <% end %>
 
