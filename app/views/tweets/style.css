@@ -1,4 +1,4 @@
-#tweetContent{
+#page{
     width: 980px;
     margin: 0 auto;
 }
@@ -22,7 +22,7 @@ h2{
     float: left;
 }
 
-#submitBlock{
+#pageSub{
     width: 720px;
     
     float: right;
